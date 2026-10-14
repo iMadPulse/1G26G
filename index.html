@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop Measuring the Roof: What Really Separates 1G to 6G</title>
+<meta name="description" content="Cellular generations aren't defined by speed. They're defined by the problems they solve. A tour from 1G to 6G, beyond the speedometer.">
+<meta name="author" content="Imad MIKAIEL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stop Measuring the Roof: What Really Separates 1G to 6G">
+<meta property="og:description" content="Cellular generations aren't defined by speed. They're defined by the problems they solve.">
+<meta property="og:image" content="1Gto6G.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0C1A2E; --paper:#F3F5F7; --ink:#13233A; --muted:#4E5D70; --rule:#D5DCE4; --panel:#E7ECF1;
+  --g1:#7F8B98; --g2:#178F87; --g3:#2F6FD6; --g4:#1287B5; --g5:#7352CF; --g6:#B8860B;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0F1C2F; --ink:#E4EAF1; --muted:#9FB0C3; --rule:#24364E; --panel:#16273E;
+    --g1:#A9B4C0; --g2:#3CC7BC; --g3:#6E9BF0; --g4:#3FB8E6; --g5:#A68BF0; --g6:#E2B341;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.7}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration-color:var(--g3);text-underline-offset:3px}
+a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--g3);outline-offset:3px}
+p{margin:0 0 1.1rem}
+
+/* Hero */
+.hero{background:var(--navy);color:#F2F5F9}
+.hero-inner{max-width:56rem;margin:0 auto;padding:5rem 1.5rem 3.5rem}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,11vw,7rem);line-height:.9;letter-spacing:-.015em;margin:0}
+.hero .sub{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.1;color:#AFC0D4;margin:.6rem 0 2rem}
+.hero .dek{font-size:1.25rem;line-height:1.55;max-width:34rem;color:#D7E0EA;margin:0 0 2rem}
+.byline{font-size:.98rem;color:#93A6BC;margin:0}
+.byline strong{color:#F2F5F9;font-weight:600}
+.spectrum{display:grid;grid-template-columns:repeat(6,1fr);height:8px}
+.spectrum span:nth-child(1){background:var(--g1)} .spectrum span:nth-child(2){background:var(--g2)}
+.spectrum span:nth-child(3){background:var(--g3)} .spectrum span:nth-child(4){background:var(--g4)}
+.spectrum span:nth-child(5){background:var(--g5)} .spectrum span:nth-child(6){background:var(--g6)}
+
+/* Body */
+.col{max-width:40rem;margin:0 auto;padding:0 1.5rem}
+h2{font-family:var(--display);font-weight:700;font-size:2.2rem;line-height:1.1;margin:4rem 0 1.1rem}
+ul{padding-left:1.2rem;margin:0 0 1.3rem}
+li{margin-bottom:.55rem}
+li strong{font-weight:600}
+.lead{font-size:1.3rem;line-height:1.55}
+
+/* Roof figure */
+.roof{margin:2rem 0 2.2rem}
+.roof svg{width:100%;color:var(--ink)}
+.roof .dim{stroke:var(--g6);stroke-width:1.5}
+.roof .lbl{font-family:var(--display);font-weight:600;font-size:15px;fill:var(--g6)}
+.roof figcaption{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--muted);margin-top:.6rem}
+
+/* Infographic */
+.infographic{margin:2.5rem auto;padding:0 1.5rem;max-width:46rem}
+.infographic img{border-radius:6px;margin:0 auto}
+.infographic figcaption{font-size:.95rem;color:var(--muted);text-align:center;margin-top:.7rem}
+
+/* Generation jump bar */
+.genbar{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;margin:0 0 1rem}
+.genbar a{display:block;text-align:center;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.35rem;padding:.4rem 0;border-bottom:4px solid var(--g);color:var(--g)}
+.genbar a:hover{background:var(--panel)}
+
+/* Generation sections */
+.gen{--g:var(--g1);margin-top:4.5rem;scroll-margin-top:1.5rem}
+.gen.g2{--g:var(--g2)} .gen.g3{--g:var(--g3)} .gen.g4{--g:var(--g4)} .gen.g5{--g:var(--g5)} .gen.g6{--g:var(--g6)}
+.genbar a.g1{--g:var(--g1)} .genbar a.g2{--g:var(--g2)} .genbar a.g3{--g:var(--g3)}
+.genbar a.g4{--g:var(--g4)} .genbar a.g5{--g:var(--g5)} .genbar a.g6{--g:var(--g6)}
+.gen-head{display:grid;grid-template-columns:auto 1fr;gap:0 1.1rem;align-items:center;border-top:3px solid var(--g);padding-top:1.2rem;margin-bottom:1.2rem}
+.gen-num{font-family:var(--display);font-weight:800;font-size:5.2rem;line-height:.85;color:var(--g)}
+.gen-head h2{margin:0;font-size:2.1rem}
+.mattered{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--g);margin:.15rem 0 0}
+.problem{font-family:var(--display);font-style:italic;font-weight:500;font-size:1.65rem;line-height:1.2;margin:0 0 1.2rem}
+.caveat{background:var(--panel);border-left:4px solid var(--g);padding:1rem 1.2rem;font-size:1.02rem;margin:1.4rem 0}
+.caveat strong{font-weight:600}
+
+/* Table */
+.table-col{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+.table-wrap{overflow-x:auto;border-top:3px solid var(--ink);-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;font-size:.93rem;line-height:1.4;min-width:50rem;width:100%}
+th,td{text-align:left;vertical-align:top;padding:.7rem .75rem;border-bottom:1px solid var(--rule)}
+thead th{font-family:var(--display);font-size:1.35rem;font-weight:700}
+thead th:nth-child(2){color:var(--g1)} thead th:nth-child(3){color:var(--g2)} thead th:nth-child(4){color:var(--g3)}
+thead th:nth-child(5){color:var(--g4)} thead th:nth-child(6){color:var(--g5)} thead th:nth-child(7){color:var(--g6)}
+tbody th{font-weight:600;white-space:nowrap;background:var(--panel)}
+.note{font-size:.93rem;color:var(--muted);margin-top:.8rem}
+
+/* Ending */
+.ending{background:var(--navy);color:#F2F5F9;margin-top:5rem}
+.ending .col{padding-top:3.5rem;padding-bottom:3.5rem}
+.ending h2{margin-top:0;color:#F2F5F9}
+.ending p{color:#D7E0EA}
+.ending .verdict{font-family:var(--display);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.05;color:#F2F5F9;margin:2rem 0 0}
+
+footer{max-width:40rem;margin:0 auto;padding:2rem 1.5rem 3rem;font-size:.93rem;color:var(--muted)}
+footer p{margin:.3rem 0}
+
+@media (max-width:600px){
+  body{font-size:1.05rem}
+  .hero-inner{padding-top:3.5rem}
+  .gen-num{font-size:3.8rem}
+  .gen-head h2{font-size:1.7rem}
+  .problem{font-size:1.4rem}
+  .genbar a{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Stop measuring the roof</h1>
+    <p class="sub">What really separates 1G to 6G</p>
+    <p class="dek">Most explainers reduce cellular generations to a speedometer. That's like comparing a car, a truck and a plane by the height of their roof.</p>
+    <p class="byline">By <strong>Imad MIKAIEL</strong>, <time datetime="2026-10-13">October 13, 2026</time></p>
+  </div>
+  <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</header>
+
+<main>
+<div class="col">
+
+<h2>The speedometer problem</h2>
+<p class="lead">You've seen the picture. Five columns: a skateboard, a bike, a car, a plane, a rocket. Under each one, a speedometer: 0.256, 42, 150, 1,000 Mbit/s.</p>
+<p>It's tidy, shareable and almost useless. It tells you each generation is faster, which nobody doubted, and hides everything that made it a new generation. I work in the cellular industry, and these charts frustrate me every time. Here's why, and what a better explanation looks like.</p>
+
+<h2>Comparing vehicles by roof height</h2>
+<p>Imagine explaining the difference between a car, an SUV, a truck and a plane with a ruler.</p>
+
+<figure class="roof">
+<svg viewBox="0 0 700 215" role="img" aria-labelledby="roofTitle">
+  <title id="roofTitle">A car, an SUV, a truck and a plane drawn to scale, labeled only by height: 1.4 m, 1.8 m, 4 m and 12 m.</title>
+  <g fill="currentColor">
+    <!-- car -->
+    <path d="M18,196 L18,188 Q22,184 32,183 L46,179 L82,179 L96,185 L108,187 L110,196 Z"/>
+    <circle cx="38" cy="197" r="6"/><circle cx="92" cy="197" r="6"/>
+    <!-- SUV -->
+    <path d="M140,196 L140,181 L150,175 L222,175 L232,184 L242,186 L242,196 Z"/>
+    <circle cx="160" cy="197" r="7"/><circle cx="222" cy="197" r="7"/>
+    <!-- truck -->
+    <rect x="272" y="144" width="96" height="50"/>
+    <path d="M371,194 L371,160 L390,160 L404,176 L404,194 Z"/>
+    <circle cx="292" cy="197" r="7"/><circle cx="342" cy="197" r="7"/><circle cx="390" cy="197" r="7"/>
+    <!-- plane -->
+    <path d="M436,186 Q428,172 450,170 L612,168 Q624,168 628,176 L630,186 Q612,191 450,191 Z"/>
+    <path d="M578,169 L618,32 L634,32 L632,172 Z"/>
+    <path d="M492,183 L572,183 L552,190 L482,190 Z" opacity=".55"/>
+    <rect x="480" y="190" width="3" height="10"/><rect x="598" y="190" width="3" height="10"/>
+  </g>
+  <line x1="0" y1="203" x2="700" y2="203" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+  <g class="dim">
+    <line x1="116" y1="179" x2="116" y2="203"/><line x1="112" y1="179" x2="120" y2="179"/>
+    <line x1="254" y1="175" x2="254" y2="203"/><line x1="250" y1="175" x2="258" y2="175"/>
+    <line x1="410" y1="144" x2="410" y2="203"/><line x1="406" y1="144" x2="414" y2="144"/>
+    <line x1="646" y1="32" x2="646" y2="203"/><line x1="642" y1="32" x2="650" y2="32"/>
+  </g>
+  <text class="lbl" x="116" y="171" text-anchor="middle">1.4 m</text>
+  <text class="lbl" x="254" y="167" text-anchor="middle">1.8 m</text>
+  <text class="lbl" x="410" y="136" text-anchor="middle">4 m</text>
+  <text class="lbl" x="652" y="120">12 m</text>
+</svg>
+<figcaption>Every number is right. You've learned nothing.</figcaption>
+</figure>
+
+<p>Nothing about a truck carrying cargo. Nothing about a plane needing an airport, a pilot's license and air traffic control. Nothing about why a city dweller picks the small car the chart says "loses."</p>
+<p>Roof height is a by-product of design, not the design itself. Peak data rate is the same: the result of choices about radio, architecture, spectrum and services. Those choices are what define a generation.</p>
+
+<h2>Even on speed, the chart misleads</h2>
+<ul>
+<li><strong>Peak isn't typical.</strong> These are theoretical maxima: ideal radio, maximum bandwidth, one user in the cell. Real users get a fraction, shared with everyone nearby.</li>
+<li><strong>One number hides a decade.</strong> 2G's 0.256 Mbit/s is EDGE, a late upgrade; GSM launched at 9.6 kbit/s. 3G's 42 Mbit/s is HSPA+, not the 384 kbit/s of early UMTS. 4G went from 150 Mbit/s to multi-gigabit.</li>
+<li><strong>Speed is one requirement among many.</strong> The ITU targets behind 4G and 5G also cover latency, spectral efficiency, device density, mobility, energy and reliability. For 5G, a million devices per km² and 1 ms latency matter as much as 20 Gbit/s.</li>
+</ul>
+
+<h2>A better lens: the problem each generation solved</h2>
+<p>Every generation exists to solve a problem its predecessor couldn't. Speed improved along the way, but the problem is what defined the generation. So I drew it that way.</p>
+</div>
+
+<figure class="infographic">
+  <a href="1Gto6G.png"><img src="1Gto6G.png" width="1024" height="1536" loading="lazy" alt="Infographic, From 1G to 6G: 1G mobile voice, mobility. 2G digital communications, digitalization. 3G mobile internet, internet connectivity. 4G all-IP networks, IP convergence. 5G connectivity for everything, flexibility. 6G intelligent networks, intelligence. Stop looking at the speedometer."></a>
+  <figcaption>Tap to open full size.</figcaption>
+</figure>
+
+<div class="col">
+<p>Below, each row of the graphic, with what sits underneath it.</p>
+<nav class="genbar" aria-label="Jump to a generation">
+  <a class="g1" href="#g1">1G</a><a class="g2" href="#g2">2G</a><a class="g3" href="#g3">3G</a>
+  <a class="g4" href="#g4">4G</a><a class="g5" href="#g5">5G</a><a class="g6" href="#g6">6G</a>
+</nav>
+
+<section class="gen g1" id="g1">
+  <div class="gen-head"><span class="gen-num">1G</span><div><h2>Mobile voice</h2><p class="mattered">What mattered: mobility</p></div></div>
+  <p class="problem">How can people talk while moving?</p>
+  <p>1G's breakthrough wasn't the handset but the cellular concept: many small cells, frequencies reused across them, and calls handed over as users move. Handover still underpins every network today.</p>
+  <ul>
+    <li>Analog voice, one frequency channel per call (FDMA), and no encryption: anyone with a scanner could listen in.</li>
+    <li>National systems with no roaming: NMT in the Nordics, AMPS in the US, TACS in the UK, Natel C in Switzerland.</li>
+    <li>No global standard at all. 1G predates both GSM and 3GPP.</li>
+  </ul>
+</section>
+
+<section class="gen g2" id="g2">
+  <div class="gen-head"><span class="gen-num">2G</span><div><h2>Digital communications</h2><p class="mattered">What mattered: digitalization</p></div></div>
+  <p class="problem">How can communications become digital and secure?</p>
+  <p>Turning voice into bits is the biggest single break in this story. Digital voice can be compressed, encrypted, error-corrected and mixed with data. Everything else on the 2G row follows from that.</p>
+  <ul>
+    <li><strong>TDMA.</strong> Each 200 kHz GSM carrier is split into 8 time slots: more users per MHz, better quality, lower cost.</li>
+    <li><strong>Security, one way.</strong> The network authenticates and encrypts, but the phone never verifies the network. That opened the door to fake base stations, and the A5 ciphers were eventually broken.</li>
+    <li><strong>The SIM card.</strong> It separated the subscriber from the handset and made international roaming real.</li>
+    <li><strong>SMS.</strong> A side feature riding on signaling channels became one of the most profitable services the industry ever had.</li>
+  </ul>
+  <p>Underneath sat a digital telephone exchange (MSC, HLR, VLR). Data came later as add-ons, GPRS then EDGE. GSM was specified by ETSI; 3GPP inherited it after 1998.</p>
+</section>
+
+<section class="gen g3" id="g3">
+  <div class="gen-head"><span class="gen-num">3G</span><div><h2>Mobile internet</h2><p class="mattered">What mattered: internet connectivity</p></div></div>
+  <p class="problem">How can the Internet fit in your pocket?</p>
+  <p>3G was the first generation designed for data, and the first standardized by 3GPP, founded in 1998 for exactly that. It brought the mobile web, email everywhere and multimedia, and set the stage for the smartphone.</p>
+  <ul>
+    <li><strong>WCDMA.</strong> All users share one 5 MHz carrier at the same time, separated by codes. Flexible, but power control is critical and cells "breathe" as load changes.</li>
+    <li><strong>Two parallel worlds.</strong> A circuit core for voice, a packet core for data, and a radio network controller (RNC) steering the base stations.</li>
+    <li><strong>Mutual authentication.</strong> With AKA, the phone finally verifies the network too.</li>
+  </ul>
+  <p>Its weakness: data was still a guest in a network built for calls. Around 100 ms of latency, a complex architecture, and split voice and data paths became 4G's to-do list.</p>
+</section>
+
+<section class="gen g4" id="g4">
+  <div class="gen-head"><span class="gen-num">4G</span><div><h2>All-IP networks</h2><p class="mattered">What mattered: IP convergence</p></div></div>
+  <p class="problem">Can everything become data?</p>
+  <p>4G said yes. LTE dropped circuit switching entirely, and voice became IP packets like everything else. It's the most underrated shift in the series: the mobile network went from a phone system that carries data to a data network that carries voice.</p>
+  <ul>
+    <li><strong>OFDMA radio.</strong> A scheduler assigns blocks of time and frequency every millisecond. Channels from 1.4 to 20 MHz, MIMO built in, carrier aggregation later.</li>
+    <li><strong>A flat core.</strong> The EPC replaced the two domains, and RNC functions moved into the base station. Fewer hops, around 30–50 ms of latency.</li>
+    <li><strong>VoLTE.</strong> Early 4G had no native voice and fell back to 3G or 2G for calls. VoLTE, running on IMS, fixed that.</li>
+    <li><strong>The app economy.</strong> An always-on IP pipe made streaming, ride-hailing, mobile payments and cloud services possible on a phone.</li>
+  </ul>
+  <p>And from Release 13, 4G started designing for machines. LTE-M and NB-IoT trade speed for deep coverage, low cost and ten-year battery life. The machine era starts here, not with 5G.</p>
+</section>
+
+<section class="gen g5" id="g5">
+  <div class="gen-head"><span class="gen-num">5G</span><div><h2>Connectivity for everything</h2><p class="mattered">What mattered: flexibility</p></div></div>
+  <p class="problem">Can one network serve radically different needs?</p>
+  <p>A phone streaming 4K video, a factory robot, a smart meter in a basement and a smartwatch have almost nothing in common. 5G is built to serve them all on one infrastructure.</p>
+  <ul>
+    <li><strong>eMBB.</strong> The throughput the speed charts love, from wide channels at 3.5 GHz and in millimeter wave.</li>
+    <li><strong>URLLC.</strong> Millisecond latency with very high reliability, for industrial control.</li>
+    <li><strong>mMTC.</strong> Up to a million devices per km², carried largely by LTE-M and NB-IoT, now part of the 5G family.</li>
+    <li><strong>RedCap and eRedCap.</strong> A mid-tier for wearables, cameras and sensors that need more than NB-IoT and far less than a smartphone.</li>
+  </ul>
+  <p>Flexibility runs through every layer: a scalable radio with sub-millisecond slots, massive MIMO and beamforming; a cloud-native core that enables network slicing and edge computing; and an encrypted subscriber identity (SUCI) that defeats most IMSI catchers.</p>
+  <p class="caveat"><strong>One caveat.</strong> Many operators launched non-standalone 5G: 5G radio on top of a 4G core. The phone shows "5G," but slicing and URLLC only arrive with a standalone core.</p>
+</section>
+
+<section class="gen g6" id="g6">
+  <div class="gen-head"><span class="gen-num">6G</span><div><h2>Intelligent networks</h2><p class="mattered">What will matter: intelligence</p></div></div>
+  <p class="problem">Can networks understand and interact with the world?</p>
+  <p>6G isn't here yet. The ITU has framed IMT-2030, 3GPP began its 6G studies in Release 20, and first specifications are expected around 2030. It's a direction rather than a design, and once again, the direction isn't speed.</p>
+  <ul>
+    <li><strong>AI-native.</strong> Designed in from the start, down to the air interface, rather than bolted on.</li>
+    <li><strong>Integrated sensing.</strong> The same signals that carry data also detect, locate and track objects.</li>
+    <li><strong>Digital twins.</strong> Live models of factories, cities and transport systems.</li>
+    <li><strong>Autonomous operation.</strong> A network that understands what each device needs and adapts with far less manual configuration.</li>
+  </ul>
+</section>
+
+<h2>Under the hood, at a glance</h2>
+</div>
+
+<div class="table-col">
+<div class="table-wrap" role="region" aria-label="Technical comparison of cellular generations" tabindex="0">
+<table>
+<thead>
+<tr><td></td><th scope="col">1G</th><th scope="col">2G</th><th scope="col">3G</th><th scope="col">4G</th><th scope="col">5G</th><th scope="col">6G</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Standard</th><td>National systems</td><td>GSM (ETSI)</td><td>UMTS, 3GPP Rel-99</td><td>LTE, Rel-8</td><td>NR, Rel-15</td><td>IMT-2030, studies from Rel-20</td></tr>
+<tr><th scope="row">Radio access</th><td>FDMA, analog</td><td>TDMA</td><td>WCDMA</td><td>OFDMA</td><td>Flexible OFDM, massive MIMO</td><td>AI-native air interface explored</td></tr>
+<tr><th scope="row">Switching</th><td>Circuit</td><td>Circuit, packet add-on</td><td>Circuit + packet</td><td>All-IP</td><td>All-IP</td><td>All-IP</td></tr>
+<tr><th scope="row">Core</th><td>Exchange</td><td>MSC + GPRS</td><td>MSC + packet core</td><td>EPC, flat</td><td>5GC, cloud-native</td><td>To be defined</td></tr>
+<tr><th scope="row">Voice</th><td>Analog</td><td>Circuit</td><td>Circuit</td><td>VoLTE</td><td>VoNR</td><td>IMS-based</td></tr>
+<tr><th scope="row">Security</th><td>None</td><td>One-way auth</td><td>Mutual auth</td><td>Layered keys</td><td>Concealed identity</td><td>To be defined</td></tr>
+<tr><th scope="row">Latency</th><td>n/a</td><td>Hundreds of ms</td><td>~100 ms</td><td>~30–50 ms</td><td>A few ms</td><td>Below 5G</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">Indicative orders of magnitude; real values depend on release, deployment and load. The 6G column reflects research directions, not final specifications.</p>
+</div>
+</main>
+
+<section class="ending">
+  <div class="col">
+    <h2>Stop looking at the speedometer</h2>
+    <p>From 1G to 6G, the real story is a chain of new problems: connect people, digitize communication, put the Internet in your pocket, turn everything into IP, connect machines and industry, and next, connect the physical and digital worlds.</p>
+    <p>Speed rose along the way. It was never the point. It was the exhaust.</p>
+    <p class="verdict">Cellular generations aren't defined by speed. They're defined by the problems they solve.</p>
+  </div>
+  <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</section>
+
+<footer>
+  <p>Written by Imad MIKAIEL. The views expressed here are my own and do not represent those of my employer.</p>
+  <p>Infographic and text © 2026 Imad MIKAIEL.</p>
+</footer>
+
+</body>
+</html>
